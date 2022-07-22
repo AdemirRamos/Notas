@@ -1,0 +1,100 @@
+import './App.css'
+import React, {useState} from 'react'
+import {Title} from './Styles/main'
+import {Bar} from './Styles/main'
+import {Header} from './Styles/main'
+import {Body} from './Styles/main'
+import Image from './Images/red.png'
+
+/*Transform: https://www.w3schools.com/cssref/css3_pr_transform.asp*/
+/*
+export default function Portfolio() {
+
+  const [add_class, set_class] = useState('')
+
+  return(
+    <>
+
+      <Header>
+
+        <Title>Ademir Ramos</Title>
+
+        <Bar/>
+
+        <a href="https://github.com/AdemirRamos" title="Click here to check my GitHub Profile!" target="_blank" rel="noreferrer">GitHub</a>
+
+        <div>
+
+          <a href="#" title="Click here to see my projects.">Projects</a>
+          <a href="#" title="Click here to see my repositories.">Repositories</a>
+          <a href="#" title="Click here to know a little bit more about me.">About Me</a>
+
+        </div>
+
+      </Header>
+
+      <Body>
+
+        <p>
+
+          Hello! My name is Ademir Ramos and this is a little portfolio I'm constructing
+          to tell and show you a little bit more about myself. <br/>
+          Here you can find my GitHub profile; my repositories; and more information about me and what I'm doing.
+
+        </p>
+
+        <img src={Image} alt="Logo from 'Songs For The Deaf' from Queens of the Stone Age." title="Click here! - Image: Songs For The Deaf - Queens of the Stone Age." onClick={() => set_class('image_animation')} className={add_class}/>
+
+      </Body>
+
+    </>
+  )
+}
+
+import React from 'react';
+import {Title} from './Styles/main'
+import {Bar} from './Styles/main'
+import {Header} from './Styles/main'
+import {Body} from './Styles/projects'
+import Red from './Images/red.png'
+
+export default function Portfolio() {
+
+  function image_animation(e) {
+    e.borderRadius = `${1}px`
+  }
+
+  return(
+    <>
+
+      <Header>
+
+        <Title>Ademir Ramos</Title>
+
+        <Bar/>
+
+        <a href="#" title="Click here to return to the main page." target="_blank">Main Page</a>
+
+        <div>
+
+          <a href="https://github.com/AdemirRamos" title="Click here to check my GitHub Profile!" target="_blank">GitHub</a>
+          <a href="#" title="Click here to see my repositories.">Repositories</a>
+          <a href="#" title="Click here to know a little bit more about me.">About Me</a>
+
+        </div>
+
+      </Header>
+
+      <Body>
+
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni earum nobis mollitia sed id, tempore temporibus praesentium, doloremque deserunt nihil perspiciatis pariatur sequi facilis dicta debitis repellat blanditiis cum quam?</p>
+
+        <img src={Red} alt="" onClick={image_animation(e)}/>
+
+        <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda nulla dolores temporibus alias, debitis laboriosam repudiandae, necessitatibus aut accusantium soluta et tempore dolor placeat quia blanditiis veniam omnis, error nisi.</div>
+
+      </Body>
+
+    </>
+  )
+}

@@ -1,0 +1,160 @@
+ex01 - aula 10: contador de 3 opções: 1ª: contagem de 0 até 10; 2ª: contagem de 10 até 0; 3ª: sair. | Status: resolvido.
+
+ex02 - aula 10: seletor de pessoas; contar pessoas do sexo masculino maiores de idade e com o cabelo castanho; pessoas do sexo feminino entre 25 e 30 com o cabelo loiro. loop: while com sim ou não para sair. | Status: resolvido.
+
+ex02
+	
+	seletor de pessoas / qual o sexo / qual a idade / cor do cabelo homem 1 preto 2 castanho 3 loiro 4 ruivo | cor do cabelo mulher *mesmas opções*
+	resultado: homem com cabelos castanhos e 18+ e mulheres entre 25 e 30 cabelos loiros.
+
+ex02 -> Status: resolvido.
+
+ex03 - aula 11: minuto 17 do vídeo. | Resolvido.
+
+ex04 - aula 11: exercício de combinações com laço dentro de laço. Status: checar.
+
+ex05 - aula 11 sequência de fibonacci.
+
+P. S.: Curiosidade: quanto maior for o a sequência de fibonacci, mais próxima de phi será a divisão dos dois últimos resultados. Status: ainda não resolvido.
+
+ex06 - aula 11 analisador de valores: mostrar: soma dos valores; média entre os valores; quantos são divisíveis por 5; quantos são nulos; soma dos pares; total de valores: 5. | Resolvido.
+
+ex07 - aula 14 times: todas as possibilidades de confrontos entre três times. | Status: resolvido.
+
+ex08 - aula 14 gabarito de prova: 5 questões recebendo letras dos gabaritos; três alunos responderam; mostrar as notas dos alunos e a média da classe.
+
+ex09 - aula 14 reserva no cinema: crie uma fileira de cadeiras e as reservem (sem repetir cadeiras). 
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+def contagem_1(a):
+    if a == 1:
+        contador = 0
+        print()
+        print('Resultado da contagem: ', end='')
+        while contador < 10:
+            contador += 1
+            print(f'{contador}', end=' ')
+
+def contagem_2(a):
+    if a == 2:
+        contador = 11
+        print()
+        print('Resultado da contagem: ', end='')
+        while contador > 0:
+            contador -= 1
+            print(f'{contador}', end=' ')
+            
+while True:
+    print()
+    valor = int(input('\nDigite o valor da contagem [1 (Progressiva), 2 (Regressiva), 3 (Sair do Programa)]: '))
+    contagem_1(valor)
+    contagem_2(valor)
+    if valor == 3:
+        break
+print('\nFim do programa.')
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+def menu():
+
+    contador_homem = 0
+    contador_mulher = 0
+    
+    while True:
+        print()
+        sexo = str(input('Qual o sexo? ')).lower().strip()[0]
+        idade = int(input('Qual a idade? '))
+        
+        print('\n[1] Preto\n[2] Castanho\n[3] Loiro\n[4] Ruivo\n')
+        
+        hair = int(input('Qual a cor do cabelo? '))
+        
+        opção = str(input('\nVocê quer continuar? [Sim / Não]: ')).lower().strip()[0]
+        
+        if sexo == 'm' and idade > 18 and hair == 2:
+            contador_homem += 1
+
+        elif sexo == 'f' and idade >= 25 and idade <= 30 and hair == 3:
+            contador_mulher += 1
+            
+        if opção == 'n':
+            break
+
+    print(f'\nO número de homens com mais de 18 anos e cabelo castanho são de: {contador_homem}.')
+    print(f'O número de mulheres loiras entre 25 e 30 anos de idade são de: {contador_mulher}.')
+
+menu()
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+def números():
+
+    contador = soma_ímpares = soma_ímpares_010 = 0
+    
+    for n in range(0, 6):
+        número = int(input('Digite um número: '))
+    
+        if número > 0 and número < 10:
+            contador += 1
+
+        if número % 2 == 1:
+            soma_ímpares += número
+
+        if número % 2 == 1 and número > 0 and número < 10:
+            soma_ímpares_010 += número
+
+    print()
+    print(f'Entre os valores digitados, {contador} está (ão) entre 0 e 10.')
+    print(f'A soma entre todos os valores ímpares é igual a: {soma_ímpares}.')
+    print(f'A soma entre os valores impares (entre 0 e 10) é igual a: {soma_ímpares_010}.')
+        
+números()
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+def números():
+
+    soma = contador = contador_null = soma_pares = 0
+    
+    for n in range(1, 6):
+        número = int(input(f'Digite o {n}ª valor: '))
+
+        soma += número
+        média = soma / 5
+
+        if número % 5 == 0:
+            contador += 1
+
+        if número == 0:
+            contador_null += 1
+
+        if número % 2 == 0:
+            soma_pares += número
+
+    print(f'\nA soma entre os valores é igual a: {soma}.\nA média entre os valores e igual a: {média}.\n{contador} número (s) é (são) divisível (eis) por 5.')
+    print(f'{contador_null} números são nulos.\nA soma entre os valores pares e igual a: {soma_pares}.')
+
+números()
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+times = list()
+
+for t in range(0, 3):
+    times.append(str(input('Digite o nome do time: ')))
+
+print(f'\nOs times selecionados foram: {times}.')
+
+print('\nJogos:\n')
+
+for t in times:
+    for team in times:
+        if t != team:
+            print(f'Mandante: {t} x Visitante: {team}')
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=

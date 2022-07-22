@@ -1,0 +1,384 @@
+Protocolo HTTP - O que é HTTP?:
+
+Significado da sigla: Hyper Text Transfer Protocol.
+
+O que é um Hipertexto?: um texto com "links" associados a ele. - O Hipertexto pode conter diferentes arquivos (músicas, fotos, vídeos, jogos, et cetera).
+
+Do que é composto um Hipertexto?: de documentos HTML que podem fazer referência a outros documentos HTML ou mesmo outros tipos de arquivos.
+
+Características de HTTP:
+
+- Faz parte da "Camada de Aplicação": o HTTP se encontra na camada de maior nível/última camada;
+
+- HTTP é "stateless": isso significa que, quando uma máquina mandar uma requisição para um servidor, tanto para o servidor quanto para a máquina é como se a comunicação se desse pela primeira vez pois dentro do protocolo não há estado algum - não se sabe se é a primeira, segunda, terceira, et cetera, requisição feita;
+
+- HTTP é "cliente-servidor": HTTP é fortemente baseado no conceito de requisição e resposta; a requisição é baseada na URL (munida de parâmetros) e, a partir daí, se obtem uma resposta por parte do servidor - a resposta pode variar em formatos: json, fotos, imagens, documentos HTML, et cetera;
+
+- HTTP TCI/IP: HTTP opera em cima de TCI e IP;
+
+- Retorno de HTTP: via de regra, o HTTP retorna conteúdos para formar uma página web, como, por exemplo, HTML, CSS, JS, mídias, et cetera.
+
+Fluxo básico de uma operação HTTP:
+
+1º: O usuário informa a URL do destino procurado;
+2º: O navegador gera a requisição feita pelo usuário - P. S.: existem mais nuances no processo;
+
+2.1º: é feita uma requisição, uma raiz, usando o protocolo HTTP versão 1.1 para o host correspondente ao endereço digitado pelo usuário; 
+
+3º: Uma vez que a requisição chegue ao servidor-destino, será gerada uma resposta junto de um conjunto de cabeçalhos e, no corpo da resposta, a página HTML requerida;
+
+4º: Uma vez que a resposta tenha sido gerada, o navegador renderizará a página para o usuário.
+
+P. S.: Para se montar uma página HTML, será necessário mais do que uma única requisição.
+
+Métodos do HTTP:
+
+- GET: esse é um dos métodos-HTTP mais importante;
+
+- POST: esse é outro método-HTTP importante;
+
+- Outros métodos: PUT, DELETE, TRACE, OPTIONS, CONNECT, HEAD.
+
+P. S.: Ao total, temos oito métodos-HTTP.
+
+Requisição via GET:
+
+As interrogações são feitas para dividir a URL e indicar os parâmetros buscados.
+
+P. S.: Query é uma consulta feita em cima do serviço.
+
+P. S.: Para se ter uma requisição segura, é preciso que a requisição seja executada em cima de um protocolo HTTPS. 
+
+Requisição via POST:
+
+Os parâmetros serão passados para o corpo da requisição - isso não significa que a sua requisição será segura.
+
+- HTTPS: Através da conexão HTTPS, tanto senhas quanto "cookies" (entre outras informações) serão criptografadas e estarão seguras de serem capturadas por terceiros.
+
+Grupos de status de mensagens do HTTP:
+
+- 1XX: Informação (grupo 100);
+- 2XX: Sucesso (grupo 200);
+
+- 3XX: Redirecionamento (grupo 300);
+- Redirecionamento: a URL do seu site mudou e, ao se digitar a antiga, o usuário será redirecionado para o novo endereço / endereço antigo apontando para o novo;
+
+- 4XX: Erro no cliente (grupo 400);
+- Erros 400: Requisição inválida; requisição com parâmetros inválidos/insuficientes para se obter a requisição;
+- Erro 404: Requisição feita a um endereço que não possui nenhum serviço disponível ou pasta associada;
+
+- 5XX: Erro no servidor (grupo 500).
+
+O HTTPS é um hibrido entre HTTP e SSL ou TLS.
+Tanto o SSL quanto o TLS são protocolos que adicionam uma camada de segurança que possibilita a criptografia das informações contidas na resposta ou na requisição.
+
+- TLS: Transport Layer Security.
+
+- Definição: o TLS é um protocolo que, por meio de criptografia, fornece confidencialidade e integridade nas comuniçações. - Também pode ser usado para prover autenticação.
+
+- SSL: Security Sockets Layer.
+
+- Definição: o SSL é um protocolo que, por meio de criptografia, fornece confidencialidade e integridade nas comuniçações. - Também pode ser usado para prover autenticação.
+
+P. S.: HTTP + TLS é mais usado do que HTTP + SSL.
+
+HTTPS e HTTP estão enquadrados na camada 4 - a camada de aplicação (e que permite o acesso a páginas web) - e ambos pertencem ao modelo TCI/IP.
+
+- Portas de comunicação de HTTP e HTTPS:
+
+- HTTP: 80 (acessar páginas web) / HTTPS: 443 (acessar páginas web criptografadas).
+
+- HTTP 2.0: É uma evolução do HTTP 1.0.
+
+HTTP 2.0: traz uma série de melhorias de performance, além de permitir que aplicações usufruam melhor de diferentes redes (especialmente móveis);
+
+HTTP 2.0: uma vez que o usuário use um navegador compátivel com o HTTP 2.0 e, do lado do servidor, haja uma atualização para o HTTP 2.0, isso irá reduzir o tempo da requisição;
+
+HTTP 2.0: o HTTP 2.0 permite uma série de requisições concomitantes;
+
+HTTP 2.0: necessita do uso do HTTPs no servidor;
+
+HTTP 2.0: garante um aumento de performance no "mobile";
+
+HTTP 2.0: o uso de SSL é obrigatório;
+
+HTTP 2.0: no HTTP 2.0, as informações são transmitidas em binário;
+
+HTTP 2.0: no HTTP 1.0, a cada nova requisição, o "header" deveria ser reenviado; no HTTP 2.0 isso não é necessário. - O HTTP 2.0 precisa de apenas uma requisição;
+
+HTTP 2.0: no HTTP 1.0, uma nova requisição só poderia ser feita após o retorno da sua resposta correspondente; no HTTP 2.0, as requisições e respostas podem ocorrer concomitantemente;
+
+P. S.: Caso (no HTTP 1.0) uma requisição travasse, todas as outras (requisições e respostas) seriam afetadas por isso.
+
+HTTP 2.0: o HTTP 2.0, através de "proxy's", já inclui na resposta algo além do que foi pedido na requisição do cliente, assim aumentando o desempenho caso o conteúdo a mais seja requisitado posteriormente;
+
+HTTP 2.0: o HTTP 2.0 tem a capacidade de compactar mais os dados - o que ajuda a melhorar a performance em dispositivos "mobile" por esses terem uma rede de menor velocidade.
+
+- O que é domínio?:
+
+- Resposta: Domínio é tudo aquilo que vem após o "http://www.".
+
+Todo site na internet precisa de um domínio para funcionar.
+
+O domínio é uma espécie de "endereço residencial" do site.
+
+O domínio também pode ser entendido como uma "máscara" ou "simplificador" para o seu IP.
+
+Um servidor DNS é capaz de estabelecer uma relação entre um domínio e o IP correspondente a ele.
+
+Sites sem domínio próprio não serão apresentados, logo no topo das pesquisas, pelos mecânismos de busca on-line.
+
+- O que é subdomínio?:
+
+Subdomínio é uma maneira de separar o seu site em subsessões.
+
+- Extensões (domínio):
+
+São os ".com", ".com.br", ".net", et cetera.
+
+Essas extensões de domínios também podem ser identificadas pela sigle TLD ("top level domain").
+
+Já a GTLD ("generic top level domain") são extensões para fins específicos.
+
+Ainda há, também, as CCTLD ("country code top level domain") que servem para identificar o país de origem do domínio.
+
+Já o "www" é o subdomínio.
+
+E após o domínio (e pós barra), há o chamado "caminho". Exemplo: www.github.com/gustavoguanabara
+
+- O que é hospedagem?:
+
+Antes de definir hospedagem, é preciso se entender o conceito de servidor: um servidor é um computador que ficará 24 horas por dia, sete dias por semana ligado a uma rede elétrica e também à internet, assim possibiitando a permanência de um site no ar 24 horas por dia, 7 dias por semana. Se, em algum momento e por qualquer razão, este computador for desligado da sua rede elétrica ou mesmo perder a conexão com a internet, o site não terá mais o seu servidor e assim ficará fora do ar.
+Dito isso, a hospedagem vem para solucionar esse problema: ao invés de ter um computador para ser o seu servidor, você pode recorrer a um serviço de hospedagem. Esse serviço coniste em terceiros fornecendo um servidor (ou mais) para suprir as suas necessidades, além de oferecem também outras vantagens.
+
+P.S.: A hospedagem deve ser renovada anualmente, mensalmente, diariamente, et cetera.
+
+O que é um (servidor) DNS ("domain name system")?:
+
+A função do DNS é facilitar a comunicação "homem-máquina".
+
+O DNS interpreta o número de IP do endereço buscado através do domínio.
+
+Definição formal para DNS: o DNS é utilizado para converter nomes de domínios, formatados como endereços URL, em endereços de IP.
+
+- Digitos Binários ("binary digits"):
+
+Também conhecidos como "bits", os digitos binários são impulsos elétrico - onde 0 representa um impulso nulo e 1 representa um impulso não nulo - que, são passados para o computador para que esse, por sua vez, os entenda e os transforme em códigos que farão com que o usuário obtenha o resultado desejado.
+
+- Byte:
+
+Um "byte" é uma sequência de oito "bits".
+
+- O que são gerenciadores de pacotes?:
+
+Os gerenciadores de pacotes são repositórios de código aberto, através dos quais diversos programadores disponibilizam soluções para o uso da Comunidade. Essas "soluções" se tratam de programas desenvolvidos por terceiro e que podem ser reutilizados por outrem para solucionar os mesmo problemas. - A ideia é não reinventar a roda toda vez que for preciso usá-la. - As soluções vão desde de bibliotecas pequenas e específicas até "frameworks" com vários recursos prontos.
+
+- O que é um "pacote"?:
+
+Um pacote é um conjunto de código que determinada biblioteca / "framework" utiliza para ser executada (o). Normalmente, esses pacotes são desenvolvidos por um grupo de pessoas que precisou / precisava solucionar algum problema específico. Após se achar uma solução para o problema em questão, esse pacote (contendo todos os códigos para a solução daquele [s] problema [s] específico [s]) é disponibilizado para que a Comunidade também possa usá-lo.
+
+- Diversas linguagens de programação terão diferentes gerenciadores de pacotes. No caso do NodeJS, as duas bibliotecas disponíveis são: NPM e Yarn.
+
+P. S.: O mais conhecido é o NPM que é, basicamente, o gerenciador-padrão do NodeJS.
+
+- NPM:
+
+O NPM usa um pacote utiliza um arquivo de configuração chamado "package.json" e esse arquivo é o responsável pela configuração do projeto onde ele será utilizado. - Por exemplo: o nome, a versão, atalhos de comandos executados pelo NPM, et cetera.
+Uma das funções principais do NPM é armazenar uma lista de dependências que o projeto utilizará e, dessa forma, é possível instalar todas estas dependências com um só comando via NPM.  Esse, por outro lado, também é ponto negativo do NPM, pois um projeto com muitas dependências, ao ser inicializado, poderá demorar um pouco para carregar. O Yarn surgiu em 2016, visando prover uma solução para o problema do NPM relatado acima.
+
+- Yarn:
+
+O Yarn também é um gerenciador de pacotes para NodeJS. O seu objetivo é tornar o processo de instalação das dependências mais rápido e seguro. Isso se deve ao fato de que o Yarn consulta um diretório de cache global que é usado tanto para impedir que um determinado seja feito "download" quanto para autorizar uma instalação off-line. - Algo que não passível de ser feito através do NPM. - Para se utilizar o Yarn, é preciso fazer a sua instalação via NPM.
+
+P. S.: É feita uma brincadeira em torno de baixar o Yarn através do NPM: é como baixar o Google Chrome através do Internet Explorer. 
+
+- Qual dos dois gerenciadores se deve usar?:
+
+Isso dependerá do tamanho do seu projeto; caso seja pequeno, não haverá grandes diferenças de performance entre o uso do Yarn (que possui uma performance melhor do que a do NPM) e do uso do NPM.
+
+- Outras anotações sobre gerenciadores de pacotes:
+
+Definição [de gerenciador (es) de pacote (s)]: um gerenciador de pacotes é um programa que, geralmente, é utilizado através do terminal e que tem como objetivo facilitar a instalação e o gerenciamento dos programas instalados. O trabalho do gerenciador de pacotes consiste em procurar, instalar, atualizar e desinstalar os programas de acordo com os comandos do usuário; ele também garante a integridade e autenticidade dos pacotes, verificando "hashes" e chaves PGP - além de agrupar os pacotes por categoria/função e gerenciar as dependências dos programas.
+
+- O que são pacotes (e associados)?:
+
+Um pacote é, basicamente, um arquivo compactado que contem aplicativos (código-fonte ou executáveis) e metadados. Esses arquivos, geralmente, são encontrados no formato de arquivamento ".tar" e são compactados com o GNU zip, formando assim um pacote com a extensão ".tar.gz".
+
+- O que são metadados?:
+
+São dados que acompanham um programa embora não sejam primordiais para o seu funcionamento.
+
+- O que é um repositório?:
+
+Um repositório é um local de armazenamento que contem pacotes. Repositórios podem ser destinados a: um programa, armazenando o seu código-fonte; Github e Giblab, um programa, armazenando vários programas; Chrome Web Store, um sistema, armazenando vários programas; Google Play, AUR, PPAs do Ubuntu, armazenando suas principais bibliotecas: pip (Python) e gem (Ruby).
+
+- Informações extras (sobre pacotes):
+
+"Pacote" é um termo usado para descrever códigos disponibilizados publicamente. Um pacote pode conter um único arquivo ou vários arquivos de código; funcionalidades; bibliotecas; ferramentas; componentes compartilhados; ou mesmo sua aplicação. - Pacotes também são chamados de dependências ou módulos.
+
+O gerenciador de pacotes mais popular do JS é o NPM (Node Package Manager). O NPM é um registro (um lugar) onde se pode compartilhar ou baixar pacotes.
+
+Um arquivo "package.json" é o ponto de partida de todo projeto. Nele, é possível encontrar metadados (o nome do seu projeto, versão, descrição, autor, repositório, licença, et cetera); dependências (a lista de pacotes usados por seu projeto); scripts (comandos para automatizar suas tarefas de desenvolvimento).
+
+Diferença entre "dependencies" e "devDependecies": o primeiro, diz respeito aos programas necessários para o funcionamento da aplicação de modo que, ao se ter um ou mais destes programas ausentes, a aplicação não funcionará; já o segundo, diz respeito aos programas usados para o funcionamento do ambiente de desenvolvimento da aplicação.
+
+PyPI é a biblioteca de pacotes do python; PIP é o gerenciador de pacotes mais popular do Python.
+
+PIP significa "Python Installs Packages" (Python instala pacotes). 
+
+- O que é "cache"?:
+
+"Cache" é uma memória que permite um acesso mais ágil aos dados (temporários) que a compõem e que são salvos para que, sempre que necessário, sejam novamente acessados. O "cache" facilita e agiliza o acesso e/ou entrega de informações ou de um determinado conteúdo - isso se aplica ao carregamento de uma página web, por exemplo (o "cache" também está disponível em outros dispositivos/aplicações, et cetera).
+
+A memória "cache" vem encapsulada dentro dos processadores dos computadores modernos.
+
+A memória "cache" é de pequena quantidade, volátil (quando o computador é desligado, por exemplo, a memória "cache" se perde), porém de grande velocidade.
+
+Em computadores, em primeiro lugar, os dados solicitados são buscados na memória "cache" para serem processados e, se encontrados lá, serão passados para a memória RAM para terem o seu processamento consumado; o que não for achado lá (memória "cache"), será buscado na memória RAM.
+
+Quanto maior a capacidade de armazenamento da memória "cache", maior é a sua velocidade. - Os níveis vão de L1 até L4.
+
+P. S.: A memória "cache" é mais rápida que a memória RAM. Por ser uma memória muito custosa (em termos de processamento), somente coisas importantes serão salvas na memória "cache", como, por exemplo, chaves de acesso, informações referentes ao sistema operacional, et cetera. O "cache", na "web", pode rodar tanto do lado do cliente (navegador - "cache local") quanto do lado do servidor ("cache server").
+
+- Injeção de dependência:
+
+A injeção de dependência impede que uma instância de uma classe seja instanciada dentro de outra classe. Por conta disso, é possível fazer com que uma mesma classe possa executar diferentes ações, além de, ao ser necessário fazer qualquer alteração, não será necessário, por conseguinte, fazer a mesma alteração em todos os lugares onde a funcionalidade alterada fora adicionada, mas apenas uma única vez.
+
+- O que é um diretório?: Uma pasta.
+
+- O que é um ambiente virtual no Python?:
+
+Uma pasta virtual que conterá uma cópia local do Python. A partir dessa cópia, se pode fazer o gerenciamento de pacotes com mais facilidade e segurança assim nos possibilitando ter um Python (cópia) configurada para cada necessidade que tenhamos, por exemplo, um Python configurado para análise de dados, um Python para aplicação web, et cetera - além de evitar erros entre pacotes e diferentes versões do Python.
+
+P. S.: Antes de começar a usar o ambiente virtual (em Python), se faz necessário ativá-lo.
+
+- Linguagem compilada x interpretada:
+
+Os computadores (ou aplicação/máquina que irá executar o código) somente entendem o código binário (formada por 0's e 1's). O compilador serve para formatar o nosso cógido (com uma linguagem mais próxima das línguas por nós faladas - linguagem de alto nível) para o referida código binário, de modo que o computador possa entender o que está sendo requisitado através do nosso código.
+O "software" / aplicação escrito (a) em uma linguagem compilada terá uma performance e estabilidade melhores justamente por poder se comunicar mais rápido e facilmente com a máquina na qual ele (a) será executado (a).
+Já o código interpretado também é escrito através de uma linguagem de programação que é mais próxima das línguas faladas (linguagem de alto nível). A linguagem interpretada, quando é passada para o seu executor (o computador, aplicação, máquina, et cetera), recebe um "filtro" - que normalmente é feito pelos navegadores - que tem a tarefa de compilar este código e torná-lo "legível" para a máquina que irá executá-lo - e esse processo tornará a estabilidade / performance deste código mais lento (a) quando comparado (a) a um código escrito em uma linguagem compilada.
+Outra desvantagem das linguagens compiladas se dá em razão da vasta quantidade de navegadores (interpretadores de código) e dispositivos (computadores, navegadores, sistemas operacionais, et cetera) que terão a tarefa de interpretar o código para eles passado, o que aumenta a complexidade, tempo e custo da tarefa de interpretar o código passado para a máquina.
+
+- Definição formal de compilador:
+
+Um compilador é um programa ou "software" que transforma arquivos de código-fonte de uma linguagem de programação em programas executáveis em máquinas reais ou virtuais.
+
+- Diferença entre compilador e interpretador:
+
+Tanto o compilador quanto o interpretador traduzem o código escrito pelo programador para o código de máquina, no entanto, a forma como isso aocntece diverge entre cada um deles.
+
+- Processo com o compilador:
+
+O compilador lê e analisa linha a linha do seu código em busca de erros; apóas a constatação de que não há erros no código do programador, esse código será traduzido para o código de máquina; após essa última etapa, o código é traduzido para um arquivo; o arquivo traduzido, por sua vez, pode ser executado pelo usuário (esse é o famoso "arquivo executável" ou arquivo.exz"). Uma vez compilado, o arquivo pode ser usado em "qualquer lugar" e "de qualquer modo".
+
+- Processo do interpretador:
+
+O processo de interpretação executa e traduz o código simultaneamente; não é gerado, no processo, um arquivo final executável; o arquivo "executável" já é o próprio código em si; o interpretador traduz e executa cada uma das linhas do código.
+
+P. S.: Toda vez que o programa for executado, o interpretador irá reiniciar todo o processo descrito acima.
+
+- Vantagens de linguagens compiladas:
+
+1º: os programas são autossuficientes (roda em qualquer máquina);
+2º: os programas são mais velozes.
+
+- Desvantagens de linguagens compiladas:
+
+1º: a compilação pode ser um processo demorado;
+2º: o programa compilado roda em uma plataforma específica.
+
+- Vantagens de linguagens interpretadas:
+
+1º: independentemente do tamanho do programa, já pode ser executado imediatamente;
+2º: normalmente são multiplataforma;
+3º: tipagem dinâmica.
+
+- Desvantagens de linguagens interpretadas:
+
+1º: programas mais lentos;
+2º: necessita do interpretador;
+3º: facilidade maior de terceiros verem o código.
+
+- Linguagens de alto nível e baixo nível:
+
+Quanto mais próxima do "hardware" for uma linguagem, mais de baixo nível ela será; da mesma forma porém inversamente, quanto mais longe do "hardware" estiver a linguagem, de mais alto nível ela será.
+
+P. S.: "Assembly" é a linguagem de mais baixo nível que existe. Entre as diferentes linguagens de programação, há algumas que são de mais baixo nível ou de mais alto nível.
+
+P. S.: Quanto mais "fácil" é uma linguagem, menos controle se tem sobre ela - sendo o inverso lógico igualmente válido.
+
+P. S.: Quanto mais baixo for o nível de uma linguagem, melhor será o seu desempenho na máquina em que é executada.
+
+- Tipagem:
+
+Fraca (fracamente tipada): a própria linguagem pode alterar o tipo de dado da variável sem que haja uma intervenção por parte do programador;
+Forte (fortemente tipada): a linguagem não permite que um dado seja tratado de maneira diferente do tipo do qual ele foi criado;
+Estática: é preciso informar os tipos de dados (variáveis, por exemplo);
+Dinâmica: o tipo de dado pode ser atribuido na sua criação sem ser definido pelo do programador;
+Segura: a execução é interrompida pelo compilador quando se detecta um erro de tipo de dado.
+
+P. S.: Ainda existem mais tipos de tipagem.
+
+- Paradigmas: estrutural, imperativo, procedural, orientada a objetos, concorrente, orientada a eventos.
+
+Paradigma estrutual: basicamente, a programação, através desse paradigma, se dá através de sequências, decisões, interações, rotinas, laços de repetições, condições, "submits", sequências de blocos, et cetera.
+
+Paradigma orientado a objetos: nos permite criar classes e instanciá-las para manipular os seus atributos e métodos.
+
+Paradigma imperativo: funciona com a apresentação de regras acerca do que deve ser feito pelo código escrito seguindo esse paradigma.
+
+Paradigma de programação concorrente: basicamente, são programas que farão uso do recurso de execução concomitante de tarefas.
+
+Paradigma orientada a eventos: a execução do código não se dá na ordem em que esse foi escrito (seguir o fluxo), mas sim em razão dos eventos presentes no código.
+
+- O que é o "webpack"?:
+
+O "webpack" é um empacotador de arquivos JS. Os empacotadores são muito úteis quando se está trabalhando com programação modular - que consiste em programar cada funcionalidade separadamente (como se dividíssemos um problema maior em pedaços menores).
+Dividir uma aplicação em módulos gera algumas funcionalidades como: facilitar as testagens de cada módulo e/ou debugs.
+
+P. S.: O "V8 Engine" permitiu que o JS pudesse rodar fora dos navegadores, em outros ambientes, como no servidor ou mesmo em bancos de dados.
+
+P. S.: Fora do ambiente, o "webpack" só consegue "entender" arquivos JS ou Json.
+
+- O que é "clean code"?:
+
+Diz respeito à escrita mais precisa, "legível" e limpa do código.
+
+- O que é "refatoração"?:
+
+Refatoração consiste em melhorar a legibilidade e eficiência do código porém mantendo o seu funcionamento igual ao que era antes desse processo.
+
+- Arquitetura de "software": focado em como os componentes de um sistema interegem entre si;
+- "Design" de "software": focado na implementação dos componentes referidos acima.
+
+- Arquitetura: visão de mais alto nível. Separação de camadas, pastas da aplicação, et cetera;
+- Design: visão de mais baixo nível. Como escrever cada classe, quais padrões aplicar, et cetera.
+
+- MVC:
+
+O MVC, através de sua três camadas (M de Module, V de View e C de Controller), permite separar a interface que será exposta ao usuário das regras de negócio.
+
+- O que o "webpack" faz?:
+
+O "webpack" empacota arquivos de estilo, imagens, "scripts" (JS), et cetera, e os transforma em arquivos estáticos prontos para produção.
+
+- pesquisar linguagem estática x dinâmica; commonJS; EcmaScript Module;
+- Pesquisar sobre boas práticas; user experience; aulas de design; design patterns.
+
+- O que é uma biblioteca?:
+
+Uma biblioteca é um conjunto de códigos para resolver um ou mais problemas específicos.
+
+- O que é um framework?:
+
+Um "framework" é um conjunto de bibliotecas que funcionam conjuntamente para resolver algum problema ou possibilitar a criação de aplicações. - "Frameworks" contam com uma semântica própria que diverge um pouco da linguagem padrão na qual o "framework" foi baseado.
+
+- O que é uma API?:
+
+Uma API é um "web service". Os "web services" servem para interagir / consumir / enviar dados a algum serviço on-line. Essencialmente, uma API serve para que se possa integrar o código / aplicação com um sistema on-line, conectando diferentes sistemas [a sua aplicação e outro (s) sistema (s) / aplicação (ões)] de forma segura.
+
+XML HttpRequest: https://www.w3schools.com/xml/xml_http.asp
+
+AJAX - Send a Request To a Server [open() and send()]: https://www.w3schools.com/xml/ajax_xmlhttprequest_send.asp
+
+AJAX - Server Response (responseText): https://www.w3schools.com/xml/ajax_xmlhttprequest_response.asp
