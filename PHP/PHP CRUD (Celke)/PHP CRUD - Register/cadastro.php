@@ -1,4 +1,12 @@
 <?php
+	
+	//Exibindo a mensagem de sucesso ao cadastrar:
+
+	session_start();
+
+	//Garantindo que não haverá erro ao se redirecionar o usuário:
+
+	ob_start(); /*Pesquisar.*/
 
 	include_once 'connection.php';
 
@@ -25,12 +33,19 @@
 			font-weight: bolder;
 		}
 
+		a {
+			display: block;
+		}
+
 	</style>
 
 </head>
 
 <body>
 	
+	<a href="index.php">Listar</a>
+	<a href="cadastro.php">Cadastrar</a>
+
 	<h1>Cadastro</h1>
 
 	<!--Também é possível dar nome aos formulários. Esse nome pode ser usado para a validação do formulário via JS.-->
@@ -106,11 +121,17 @@
 				//Retornando uma mensagem (para o usuário no caso de sucesso ou insucesso ao se cadastrar):
 
 				if ($cadastrar_usuário->rowCount()) {
-					echo "<p style='margin-bottom: 15px; color: green;'>Cadastro efetuado com sucesso.</p>";
-
 					//Apagando todos os campos caso o usuário tenha feito o cadastro com sucesso:
 
 					unset($dados);
+
+					//Criando uma variável global para ser exibida em diferentes pontos da aplicação:
+
+					 $_SESSION['mensagem'] = "<p style='margin-bottom: 15px; color: green;'>Cadastro efetuado com sucesso.</p>";
+
+					//Redirecionando para a página de listagem:
+
+					header('Location: index.php');
 				}
 
 				else {
